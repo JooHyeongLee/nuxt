@@ -1,6 +1,6 @@
-# nuxt
+# portal-nuxt
 
-> My stupendous Nuxt.js project
+> My ultimate Nuxt.js project
 
 ## Build Setup
 

@@ -3,10 +3,10 @@
     <div>
       <logo />
       <h1 class="title">
-        nuxt
+        portal-nuxt
       </h1>
       <h2 class="subtitle">
-        My stupendous Nuxt.js project
+        My ultimate Nuxt.js project
       </h2>
       <div class="links">
         <a
@@ -23,25 +23,20 @@
         >
           GitHub
         </a>
+        <nuxt-link to="/sample"> Sample page</nuxt-link>
       </div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import Logo from '~/components/Logo.vue'
-import axios from 'axios'
 
-export default Vue.extend({
-  mounted: async() =>{
-    const { data } = await axios.get(`/api/test`);
-    console.log(data);
-  },
+export default {
   components: {
     Logo
   }
-})
+}
 </script>
 
 <style>
