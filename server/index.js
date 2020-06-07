@@ -10,6 +10,7 @@ config.dev = process.env.NODE_ENV !== 'production'
 
 // router import
 const sample = require('./routes/sample')
+const login = require('./routes/login')
 
 async function start () {
     // Init Nuxt.js
@@ -32,8 +33,12 @@ async function start () {
         cookie: { secure: true }
     }))
 
+    app.use(express.json())
+
     // router 등록
     app.use(sample)
+    app.use(login)
+
 
     // Give nuxt middleware to express
     app.use(nuxt.render)

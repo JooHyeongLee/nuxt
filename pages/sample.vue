@@ -25,17 +25,8 @@ export default ({
             title: 'sample',
         }
     },
-    created() {
-        console.log('created!')
-    },
-    mounted() {
-        console.log('mounted!')
-    },
-    asyncData({req, res}) {
-        console.log('asyncData!')
-    },
     async fetch() {
-        console.log(this.$sample)
+        // console.log(this.$sample)
     },
     methods: {
     }

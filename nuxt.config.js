@@ -1,7 +1,7 @@
 
 module.exports = {
     router: {
-        middleware: ['sample', 'sample2']
+        middleware: ['sample']
     },
     mode: 'universal',
     /*
@@ -32,6 +32,7 @@ module.exports = {
     */
     plugins: [
         '~/plugins/sample',
+        "~/plugins/fireinit.js"
     ],
     /*
     ** Nuxt.js dev-modules
@@ -42,6 +43,8 @@ module.exports = {
     ** Nuxt.js modules
     */
     modules: [
+      '@nuxtjs/axios',
+      '@nuxtjs/auth'
     ],
     /*
     ** Build configuration
@@ -51,6 +54,24 @@ module.exports = {
         ** You can extend webpack config here
         */
         extend (config, ctx) {
+        }
+    },
+    auth: {
+      strategies: {
+        local: {
+          endpoints: {
+            login: { url: '/api/auth/login', method: 'post', propertyName: 'token' },
+            logout: { url: '/api/auth/logout', method: 'post' },
+            user: { url: '/api/auth/user', method: 'get', propertyName: 'user' }
+          },
+          // tokenRequired: true,
+          // tokenType: 'bearer',
+          // globalToken: true,
+          // autoFetchUser: true
+        },
+          google: {
+            client_id: '573201838098-c3vilqjopj4mj5ub1r2kctmf2a63jemc.apps.googleusercontent.com',
+          },
         }
     }
 }
